@@ -11,21 +11,18 @@ options :{
 };
 
 
-function ver(){
+function insertar(){
     var conn = new sql.ConnectionPool(dbconfig);
     conn.connect(function (err){
-    if(err){
-    console.log(err);
+    if(err){ console.log(err);
     }else{
         var req= new sql.Request(conn);
         req.query("INSERT INTO dbo.Products  (ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice) "+
         "VALUES('Force',26,5,'Poco',90)"
         ,function(err,recordset){
-            if  (err){
-                console.log(err);
+            if  (err){console.log(err);
             }else{
                 console.log("Se han insertado: "+recordset.rowsAffected+ " filas");
-                conn.close();
                 conn.close();
             }
         });
@@ -34,4 +31,4 @@ function ver(){
 }
 
 
-ver();
+insertar();
