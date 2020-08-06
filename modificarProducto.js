@@ -1,6 +1,6 @@
 var sql = require('mssql');
 var dbconfig = {
-server: "SEBAS\\MSSQLSERVER2019",
+server: "SEBAS\\MSSQLSERVER",
 user:"sa",
 password:"sebastianmn98",
 database:"NORTHWND",
@@ -16,8 +16,8 @@ function modificar(){
     console.log(err);
     }else{
         var req= new sql.Request(conn);
-        req.query("UPDATE dbo.Products SET ProductName = Alberjas ,SupplierID = 2,CategoryID = 4,QuantityPerUnit = 2,UnitPrice = 3 "+
-        "WHERE ProductID  = 4"
+        req.query("UPDATE dbo.Products SET ProductName = 'Ikura' ,SupplierID = '2',CategoryID = '4',QuantityPerUnit = '2',"+
+        "UnitPrice = '3' WHERE ProductID  = '4'"
         ,function(err,recordset){
             if  (err){
                 console.log(err);
