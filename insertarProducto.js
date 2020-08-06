@@ -18,11 +18,14 @@ function ver(){
     console.log(err);
     }else{
         var req= new sql.Request(conn);
-        req.query("DELETE  FROM  dbo.Products WHERE ProductID = 1088 ",function(err,recordset){
+        req.query("INSERT INTO dbo.Products  (ProductName,SupplierID,CategoryID,QuantityPerUnit,UnitPrice) "+
+        "VALUES('Force',26,5,'Poco',90)"
+        ,function(err,recordset){
             if  (err){
                 console.log(err);
             }else{
-                console.log("Se han borrado: "+recordset.rowsAffected+ " filas");
+                console.log("Se han insertado: "+recordset.rowsAffected+ " filas");
+                conn.close();
                 conn.close();
             }
         });
