@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Sebasmn/trabajoNodeJs/issues"
   },
-  "homepage": "https://github.com/Sebasmn/trabajoNodeJs#readme"
+  "homepage": "https://github.com/Sebasmn/trabajoNodeJs#readme",
+  "dependencies": {
+    "mssql": "^6.2.1"
+  }
 }
