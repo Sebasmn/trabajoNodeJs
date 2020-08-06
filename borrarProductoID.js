@@ -11,7 +11,7 @@ options :{
 };
 
 
-function ver(){
+function borrar(){
     var conn = new sql.ConnectionPool(dbconfig);
     conn.connect(function (err){
     if(err){
@@ -31,4 +31,4 @@ function ver(){
 }
 
 
-ver();
+borrar();
